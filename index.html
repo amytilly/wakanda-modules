@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Wakanda-modules by Wakanda-Marketplace</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Wakanda-modules</h1>
+        <h2>Server-Side Modules for Wakanda Server / WakandaDB</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/Wakanda-Marketplace/wakanda-modules/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/Wakanda-Marketplace/wakanda-modules/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/Wakanda-Marketplace/wakanda-modules" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="wakanda-modules" class="anchor" href="#wakanda-modules"><span class="octicon octicon-link"></span></a>Wakanda Modules</h1>
+
+<h1></h1>
+
+<p>Server-Side Modules for Wakanda Server / WakandaDB</p>
+
+<h2>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p>This repositories is meant to host Wakanda modules provided by the community.
+Feel free to send a pull request adding your package as a sub-modules of this repository.</p>
+
+<p>The Wakanda Team provides no guaranty and no support to any submitted package, use them at your own risks…</p>
+
+<p>As in some other marketplaces, the Wakanda Team may highlight a selection of packages for their quality or the features they provide.</p>
+
+<h2>
+<a name="pre-requesites" class="anchor" href="#pre-requesites"><span class="octicon octicon-link"></span></a>Pre-Requesites</h2>
+
+<p>For the Pull request to be accepted, the repository added as sub-module must contain:</p>
+
+<ul>
+<li>a <code>README.md</code> file, which should include your copyright and potentially your license text if ,ot too long</li>
+<li>a valid <code>package.json</code> file</li>
+<li>At least one Server-Side JavaScript module called "index.js" or which name is mentionned in the <var>"main"</var> property of the package.json file.</li>
+</ul><p>Optional</p>
+
+<ul>
+<li>a <code>LICENSE</code> file if the license text can not be included in the README file</li>
+<li>unit test files (recommended) to detect limitations, bugs, regressions...</li>
+</ul><h3>
+<a name="package-format" class="anchor" href="#package-format"><span class="octicon octicon-link"></span></a>Package format</h3>
+
+<p>The expected format of the package.json file is directly related to the existing <a href="http://wiki.commonjs.org/wiki/Packages/1.0">CommonJS package format</a> and <a href="https://npmjs.org/doc/json.html">npm package format</a>.</p>
+
+<h4>
+<a name="a-name-property" class="anchor" href="#a-name-property"><span class="octicon octicon-link"></span></a>a <var>name</var> property</h4>
+
+<p>The name of the package. This must be a unique, lowercase alpha-numeric name without spaces. It may include "." or "_" or "-" characters. It is otherwise opaque.</p>
+
+<p>ex:</p>
+
+<pre><code>    "name": "wakanda-supermodule"
+</code></pre>
+
+<h4>
+<a name="a-version-property" class="anchor" href="#a-version-property"><span class="octicon octicon-link"></span></a>a <var>version</var> property</h4>
+
+<p>The most important things in your package.json are the name and version fields. On node.js, those are actually required, and your package won't install without them. The name and version together form an identifier that is assumed to be completely unique. Changes to the package should come along with changes to the version.</p>
+
+<p>A version string conforming to the <a href="http://semver.org/">Semantic Versioning</a> requirements.</p>
+
+<p>Consider the following version updates: </p>
+
+<ul>
+<li>0.1.0 -&gt; 0.1.1 should be non-breaking. </li>
+<li>0.1.1 -&gt; 0.2.0 could be breaking</li>
+</ul><p>ex:</p>
+
+<pre><code>    "version": "0.1.0"
+</code></pre>
+
+<p>Versions can start with "v".</p>
+
+<p>Creating tags in git like <code>git tag "v1.2.3"</code> for each version is a good practice.</p>
+
+<p>Regarding git again, the Semantic Version rule 3 says </p>
+
+<pre><code>3. Once a versioned package has been released, the contents of that version MUST NOT be modified. Any modifications MUST be released as a new version."
+</code></pre>
+
+<p>So, as also that some may go to check for the last version of your git repository, it is recommended not directly working on a master branch but create a feature  or dev branch and work on it insread.</p>
+
+<h4>
+<a name="a-description-property" class="anchor" href="#a-description-property"><span class="octicon octicon-link"></span></a>a <var>description</var> property</h4>
+
+<p>A brief description of the package. By convention, the first sentence (up to the first ". ") should be usable as a package title in listings.</p>
+
+<p>ex:</p>
+
+<pre><code>    "description": "Convert CSV files in JSON."
+</code></pre>
+
+<h4>
+<a name="an-author-property" class="anchor" href="#an-author-property"><span class="octicon octicon-link"></span></a>an <var>author</var> property</h4>
+
+<p>It can be a string or an object describing the Author. </p>
+
+<p>If it is string, consider the format <code>Full Name &lt; email &gt; (url)</code></p>
+
+<pre><code>    "author": "John Doe &lt;john@doe.com&gt;"
+</code></pre>
+
+<p>As an object, there should be at least one of the fields name, email, or url</p>
+
+<pre><code>    "author": {
+        "name": "John Doe",
+        "email": "john@doe.com",
+        "url": "http://john.doe.com"
+    }
+</code></pre>
+
+<p>Consider to mention a way to contact you, either email or url. The url might be your personal website, a Linkedin, Twitter or Github profile…</p>
+
+<h4>
+<a name="a-license-property" class="anchor" href="#a-license-property"><span class="octicon octicon-link"></span></a>a <var>license</var> property</h4>
+
+<p>The license which you prefer to release your project under. </p>
+
+<p><code>MIT</code> is a good choice.</p>
+
+<p>Each license is a hash with a "type" property specifying the type of license and a url property linking to the actual text.</p>
+
+<pre><code>    "license": {
+        "type": "GPLv2",
+        "url": "http://www.example.com/licenses/gpl.html"
+    }
+</code></pre>
+
+<p>Alternatively, a single string may be provided.</p>
+
+<p>If the license is one of the <a href="http://opensource.org/licenses/alphabetical">official open source licenses</a> the official license name or its abbreviation may be explicated with the "type" property. If an abbreviation is provided (in parentheses), the abbreviation must be used.</p>
+
+<pre><code>    "license": "MIT"
+</code></pre>
+
+<p>If multiple licenses are applicable, they can be listed in an array.</p>
+
+<pre><code>    "licenses" : [
+        {
+            "type" : "Mozilla Public License 2.0 (MPL-2.0)", 
+            "url" : "http://www.mozilla.org/MPL/2.0/"
+        },
+        {
+            "type" : "MyLicense", 
+            "url" : "http://github.com/owner/project/path/to/license"
+        }
+    ]
+</code></pre>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
